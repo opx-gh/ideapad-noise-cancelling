@@ -1,0 +1,11 @@
+[Unit]
+Description=Lenovo IdeaPad noise cancelling service
+After=local-fs.target
+
+[Service]
+Type=exec
+ExecStart=/opt/ideapad-noise-cancelling.sh
+ExecReload=/bin/kill -SIGHUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target
